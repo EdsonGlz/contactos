@@ -23,7 +23,7 @@ export class AgregarPage {
   apodo="";
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
   }
 
   contactos=[];
@@ -33,8 +33,15 @@ export class AgregarPage {
   }
 
   agregar(){
-    if (this.nombre.length == 0 || this.insta.length == 0 || this.facebook.length == 0 || this.email.length == 0 ||){
+    if (this.nombre.length == 0 || this.insta.length == 0 || this.facebook.length == 0 || this.email.length == 0 || this.twitter.length == 0 || this.apodo.lenght == 0){
+      const alert = this.alertCtrl.create({
+        title: 'Oops',
+        subTitle: 'La nota esta vacia',
+        buttons: ['OK']
+      });
 
+      alert.present();
+  }
     }
 
   }
