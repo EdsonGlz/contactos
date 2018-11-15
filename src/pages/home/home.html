@@ -1,14 +1,44 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
+
+      <ion-toolbar style= "background-color : rgb(236, 22, 22)">
+        <ion-buttons start>
+          <button (click)="clickMas()" sion-button icon-only color="royal">
+            <ion-icon  ios="ios-add" md="md-add"></ion-icon>
+          </button>
+        </ion-buttons>
+        <ion-title>Contactos</ion-title>
+        <ion-buttons end>
+          
+        </ion-buttons>
+      </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content padding style="background-color : rgb(60, 110, 19)" >  
+    <ion-list style= "color : rgb(102, 207, 16)" *ngFor="let c of contactos">
+        <ion-item-sliding style="color : rgb(102, 207, 16)">
+          <ion-item style= "background-color : rgb(147, 212, 94)">
+            <ion-avatar item-start (click)="clickAvatar(c)">
+              <img [src]= c.icono>
+            </ion-avatar >
+            <h2>{{c.nombre}}</h2>
+            <h3>{{c.numero}}</h3>
+          </ion-item>
+          <ion-item-options side="left">
+            <button ion-button color="primary">
+              <ion-icon name="text"></ion-icon>
+              Text
+            </button>
+            <button ion-button color="secondary">
+              <ion-icon name="call"></ion-icon>
+              Call
+            </button>
+          </ion-item-options>
+          <ion-item-options side="right">
+            <button ion-button color="primary">
+              <ion-icon name="mail"></ion-icon>
+              Email
+            </button>
+          </ion-item-options>
+        </ion-item-sliding>
+      </ion-list>
 </ion-content>
