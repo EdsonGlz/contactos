@@ -22,6 +22,7 @@ export class ContactoPage {
   instagram = "";
   numero="";
   nombre="";
+  apodo="";
   
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
@@ -33,6 +34,7 @@ export class ContactoPage {
     this.twitter = this.navParams.get("twitter");
     this.instagram = this.navParams.get("insta");
     this.numero = this.navParams.get("numero");
+    this.apodo = this.navParams.get("apodo");
   }
 
   ionViewDidLoad() {
